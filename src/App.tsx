@@ -1,17 +1,9 @@
 import React from 'react'
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import styled from 'styled-components'
-import Nav from './components/Nav'
-
-const Wrapper = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-`
-const Main = styled.div`
-  flex-grow: 1;
-  overflow: auto;
-`
+import Money from 'views/Money'
+import NoMatch from 'views/NoMatch'
+import Tags from 'views/Tags'
+import Statistics from 'views/Tags'
 
 function App() {
   return (
@@ -32,43 +24,6 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  )
-}
-
-function NoMatch() {
-  return <div>页面不存在，你丫输错地址了吧！</div>
-}
-
-function Statistics() {
-  return (
-    <Wrapper>
-      <Main>
-        <h2>统计页面</h2>
-      </Main>
-      <Nav />
-    </Wrapper>
-  )
-}
-
-function Tags() {
-  return (
-    <Wrapper>
-      <Main>
-        <h2>标签页面</h2>
-      </Main>
-      <Nav />
-    </Wrapper>
-  )
-}
-
-function Money() {
-  return (
-    <Wrapper>
-      <Main>
-        <h2>记账页面</h2>
-      </Main>
-      <Nav />
-    </Wrapper>
   )
 }
 
