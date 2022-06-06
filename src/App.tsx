@@ -3,7 +3,7 @@ import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Money from 'views/Money'
 import NoMatch from 'views/NoMatch'
 import Tags from 'views/Tags'
-import Statistics from 'views/Tags'
+import Statistics from 'views/Statistics'
 
 function App() {
   return (
