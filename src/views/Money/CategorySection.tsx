@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, {useState} from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.section`
   > ul {
     display: flex;
     background: #c4c4c4;
+
     > li {
       text-align: center;
       width: 50%;
       font-size: 24px;
       padding: 17px 0;
       position: relative;
+
       &.selected::before {
         content: '';
         background: black;
@@ -23,12 +25,15 @@ const Wrapper = styled.section`
       }
     }
   }
-`
-
-const CategorySection: React.FC = () => {
-  const [categoryList] = useState<('-' | '+')[]>(['-', '+'])
-  const [category, setCategory] = useState('-')
-  const categoryMap = { '-': '支出', '+': '收入' }
+`;
+type Props = {
+  value: '-' | '+';
+  onChange: (value: string) => void
+}
+const CategorySection: React.FC<Props> = (props) => {
+  const category = props.value;
+  const [categoryList] = useState<('-' | '+')[]>(['-', '+']);
+  const categoryMap = {'-': '支出', '+': '收入'};
   return (
     <Wrapper>
       <ul>
@@ -37,7 +42,7 @@ const CategorySection: React.FC = () => {
             key={c}
             className={category === c ? 'selected' : ''}
             onClick={() => {
-              setCategory(c)
+              props.onChange(c);
             }}
           >
             {categoryMap[c]}
@@ -45,7 +50,7 @@ const CategorySection: React.FC = () => {
         ))}
       </ul>
     </Wrapper>
-  )
-}
+  );
+};
 
-export { CategorySection }
+export {CategorySection};

@@ -1,17 +1,20 @@
-import React, { useRef, useState } from 'react'
-import styled from 'styled-components'
+import React, {useRef} from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.section`
   background: #f5f5f5;
-  padding: 0px 16px;
+  padding: 0 16px;
   font-size: 14px;
+
   > label {
     display: flex;
     align-items: center;
+
     > span {
       margin-right: 16px;
       white-space: nowrap;
     }
+
     > input {
       width: 100%;
       height: 73px;
@@ -19,15 +22,19 @@ const Wrapper = styled.section`
       background: none;
     }
   }
-`
-const NoteSection: React.FC = () => {
-  const [note, setNote] = useState('')
-  const refInput = useRef<HTMLInputElement>(null)
+`;
+type Props = {
+  value: string;
+  onChange: (value: string) => void
+}
+const NoteSection: React.FC<Props> = (props) => {
+  const note = props.value;
+  const refInput = useRef<HTMLInputElement>(null);
   const onBlur = () => {
     if (refInput.current !== null) {
-      setNote(refInput.current.value)
+      props.onChange(refInput.current.value);
     }
-  }
+  };
   return (
     <Wrapper>
       <label>
@@ -41,6 +48,6 @@ const NoteSection: React.FC = () => {
         />
       </label>
     </Wrapper>
-  )
-}
-export { NoteSection }
+  );
+};
+export {NoteSection};
