@@ -1,34 +1,33 @@
-import React, {useState} from 'react';
 import styled from 'styled-components';
+import React, {useState} from 'react';
 
 const Wrapper = styled.section`
-  > ul {
-    display: flex;
-    background: #c4c4c4;
-
+  font-size: 24px;
+  > ul{
+    display:flex;
+    background:#c4c4c4;
     > li {
-      text-align: center;
       width: 50%;
-      font-size: 24px;
-      padding: 17px 0;
-      position: relative;
-
-      &.selected::before {
+      text-align:center;
+      padding: 16px 0;
+      position:relative;
+      &.selected::after{
         content: '';
-        background: black;
-        width: 100%;
+        display:block;
         height: 3px;
-        display: block;
-        position: absolute;
-        bottom: 0;
+        background:#333;
+        position:absolute;
+        bottom:0;
+        width: 100%;
         left: 0;
       }
     }
   }
 `;
+
 type Props = {
-  value: '-' | '+';
-  onChange: (value: string) => void
+  value: '-' | '+',
+  onChange: (value: '-' | '+') => void;
 }
 const CategorySection: React.FC<Props> = (props) => {
   const category = props.value;
