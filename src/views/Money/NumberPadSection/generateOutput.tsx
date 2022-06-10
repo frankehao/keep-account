@@ -11,25 +11,25 @@ const generateOutput = (text: string, output = '0') => {
     case '8':
     case '9':
       if (output === '0') {
-        return text
+        return text;
       } else {
-        return output + text
+        return output + text;
       }
     case '.':
       if (output.indexOf('.') >= 0) {
-        return output
+        return output;
       }
-      return output + '.'
+      return output + '.';
     case '删除':
       if (output.length === 1) {
-        return ''
+        return '';
       } else {
-        return output.slice(0, -1) || ''
+        return output.slice(0, -1) || '';
       }
     case '清空':
-      return ''
+      return '';
     default:
-      return ''
+      return '';
   }
-}
-export { generateOutput }
+};
+export {generateOutput};

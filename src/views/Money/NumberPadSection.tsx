@@ -5,13 +5,14 @@ import {Wrapper} from './NumberPadSection/Wrapper';
 type Props = {
   value: number;
   onChange: (value: number) => void
-  onOk?:() => void
+  onOk?: () => void
 }
 
 
 const NumberPadSection: React.FC<Props> = (props) => {
     const output = props.value.toString();
     const setOutput = (output: string) => {
+        console.log('output:' + output);
         let value;
         if (output.length > 16) {
           value = parseFloat(output.slice(0, 16));
@@ -19,6 +20,7 @@ const NumberPadSection: React.FC<Props> = (props) => {
           value = 0;
         } else {
           value = parseFloat(output);
+          console.log('float:' + value);
         }
         props.onChange(value);
       }
