@@ -23,7 +23,6 @@ const defaultFormData = {
 
 function Money() {
   const [selected, setSelected] = useState(defaultFormData);
-  // eslint-disable-next-line
   const {records, addRecord} = useRecords();
   const onChange = (obj: Partial<typeof selected>) => {
     setSelected({...selected, ...obj});
@@ -42,8 +41,8 @@ function Money() {
                    onChange={note => onChange({note})}/>
       <CategorySection value={selected.category}
                        onChange={category => onChange({category})}/>
-      <NumberPadSection value={selected.amount.toString()}
-                        onChange={value => onChange({amount: parseFloat(value)})}
+      <NumberPadSection value={selected.amount}
+                        onChange={amount => onChange({amount})}
                         onOk={submit}
       />
     </MyLayout>
