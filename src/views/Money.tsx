@@ -5,7 +5,7 @@ import {TagsSection} from './Money/TagsSection';
 import {CategorySection} from './Money/CategorySection';
 import {NoteSection} from './Money/NoteSection';
 import {NumberPadSection} from './Money/NumberPadSection';
-import {useRecords} from '../hooks/useRecords';
+ import {useRecords} from '../hooks/useRecords';
 
 const MyLayout = styled(Layout)`
   display: flex;
@@ -26,8 +26,7 @@ const CategoryWrapper = styled.div`
 
 function Money() {
   const [selected, setSelected] = useState(defaultFormData);
-  // eslint-disable-next-line
-  const {records, addRecord} = useRecords();
+  const {addRecord} = useRecords();
   const onChange = (obj: Partial<typeof selected>) => {
     setSelected({...selected, ...obj});
   };
@@ -38,7 +37,7 @@ function Money() {
     }
   };
   return (
-    <MyLayout>
+    <MyLayout scrollTop={9999}>
       <TagsSection value={selected.tagIds}
                    onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note}
