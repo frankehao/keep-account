@@ -4,4 +4,5 @@ const createId = () => {
   window.localStorage.setItem('idMax', JSON.stringify(id));
   return id;
 };
+//用来给每个标签生成一个独一无二的id
 export {createId};

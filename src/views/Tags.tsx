@@ -26,7 +26,6 @@ const TagList = styled.ol`
   }
 `;
 
-
 function Tags() {
   // eslint-disable-next-line
   const {tags, addTag} = useTags();
@@ -41,12 +40,13 @@ function Tags() {
             </Link>
           </li>
         )}
-        <Center>
-          <Space/>
-          <Space/>
-          <Button onClick={addTag}>新增标签</Button>
-        </Center>
       </TagList>
+
+      <Center>
+        <Space/>
+        <Space/>
+        <Button onClick={addTag}>新增标签</Button>
+      </Center>
     </Layout>
   );
 }

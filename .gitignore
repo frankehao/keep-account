@@ -9,9 +9,9 @@
 
 # testing
 /coverage
-
 # production
 /build
+/scripts/deploy.sh
 
 # misc
 .DS_Store
