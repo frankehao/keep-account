@@ -12,6 +12,7 @@ const useTags = () => { // 封装一个自定义 Hook
         {id: createId(), name: '食'},
         {id: createId(), name: '住'},
         {id: createId(), name: '行'},
+        {id: createId(), name: '其它'},
       ];
     }
     setTags(localTags);

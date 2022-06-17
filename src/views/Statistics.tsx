@@ -6,6 +6,10 @@ import {RecordItem, useRecords} from '../hooks/useRecords';
 import {useTags} from '../hooks/useTags';
 import day from 'dayjs';
 
+const Page = require('../components/LineChart');
+
+console.log(Page);
+
 const CategoryWrapper = styled.div`
   background: white;
 `;
@@ -55,6 +59,8 @@ function Statistics() {
   return (
     <Layout>
       <CategoryWrapper>
+        <Page/>
+
         <CategorySection value={category}
                          onChange={value => setCategory(value)}/>
       </CategoryWrapper>
